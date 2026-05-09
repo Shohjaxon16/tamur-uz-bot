@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap');
+@import url('https://unpkg.com/@tabler/icons@2.44.0/iconfont/tabler-icons.min.css');
+
+:root {
+  --bg-app: #e6e6e6; /* Concrete-like light grey */
+  --bg-secondary: #ffffff; /* White cards */
+  --bg-card: #f2f2f2; /* Light grey for image backgrounds */
+  --bg-input: #f5f5f5;
+  --border: #d0d0d0;
+  --border-light: #e8e8e8;
+  --text-primary: #111111; /* Pitch black */
+  --text-secondary: #444444; /* Dark grey */
+  --text-muted: #777777;
+  --accent: #000000; /* Black accent instead of gold */
+  --accent-hover: #333333;
+  --danger: #c0392b;
+  --success: #27a85f;
+  --nav-bg: #ffffff;
+  --header-bg: #e6e6e6;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-app);
+  /* Concrete texture effect */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0; }
+
+/* Heading */
+h1, h2, h3, .heading {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.page-animate {
+  animation: slideUpFade 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Skeleton Loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: #ebebeb;
+  background-image: linear-gradient(90deg, #ebebeb 0px, #f5f5f5 50%, #ebebeb 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
