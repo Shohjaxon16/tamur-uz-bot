@@ -1,5 +1,24 @@
 const TelegramBot = require('node-telegram-bot-api');
-const bot = new TelegramBot(process.env.BOT_TOKEN);
+const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
+
+// Start komandasi uchun handler
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, 
+    `Assalomu alaykum, <b>${msg.from.first_name}</b>!\n\n` +
+    `<b>TAMUR Men's Wear</b> rasmiy botiga xush kelibsiz.\n\n` +
+    `Pastdagi tugma orqali katalogimizni ko'rishingiz va buyurtma berishingiz mumkin. 👇`, 
+    {
+      parse_mode: 'HTML',
+      reply_markup: {
+        keyboard: [
+          [{ text: "🛍 Katalog / Buyurtma", web_app: { url: "https://shohjaxon16.github.io/tamur-uz-bot/" } }]
+        ],
+        resize_keyboard: true
+      }
+    }
+  );
+});
 
 async function sendOrderToChannel(order) {
   const { orderId, name, phone, region, address, note, items, totalPrice, delivery } = order;
