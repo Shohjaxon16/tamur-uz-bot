@@ -34,7 +34,7 @@ export default function Header({ title, showBack = false }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           {/* LOGOTIP SHU YERDA CHIQADI */}
           <img 
-            src="/logo.jpg" 
+            src="logo.jpg" 
             alt="TAMUR Logo" 
             style={{ width: 34, height: 34, objectFit: 'cover', borderRadius: '50%' }} 
           />
