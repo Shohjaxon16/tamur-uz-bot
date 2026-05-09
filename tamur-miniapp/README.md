@@ -1,1 +1,0 @@
-# tamur-uz
